@@ -53,65 +53,59 @@ $row = mysqli_fetch_assoc($result);
                                                     <h3 class="modal-title text-center" id="exampleModalLabel">Update your Account</h3>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                <div class="modal-body">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <form class="row g-3" id="form" method="post" enctype="multipart/form-data">
-                                                                    <!-- id -->
-                                                                    <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-                                                                    <!-- first name -->
-                                                                    <div class="col-md-5 form-validation">
-                                                                        <label for="firstname" class="form-label fs-5"> First
-                                                                            name</label>
-                                                                        <div class="input-group">
+                                                <div class="modal-body ml-auto">
+                                                    <form class="row g-3" id="form" method="post" enctype="multipart/form-data">
+                                                        <!-- id -->
+                                                        <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+                                                        <!-- first name -->
+                                                        <div class="col-md-6 form-validation">
+                                                            <label for="firstname" class="form-label fs-5"> First
+                                                                name</label>
+                                                            <div class="input-group">
 
-                                                                            <input type="text" name="firstname" class="form-control p-2" id="firstname" placeholder="firstname" value="<?php echo $row['firstname'] ?>" autocomplete="off">
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- last name -->
-                                                                    <div class="col-md-5 form-validation">
-                                                                        <label for="lastname" class="form-label fs-5">Last name</label>
-                                                                        <div class="input-group">
-                                                                            <input type="text" name="lastname" class="form-control p-2" id="lastname" placeholder="lastname" value="<?php echo $row['lastname'] ?>" autocomplete="off">
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- Phone Number -->
-                                                                    <div class="col-md-10 form-validation">
-                                                                        <label for="phone" class="form-label fs-5">Phone</label>
-                                                                        <div class="input-group">
-                                                                            <input type="tel" name="phone" class="form-control" id="phone" placeholder="Phone Number" value="<?php echo $row['phone'] ?>" autocomplete="off">
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- email -->
-                                                                    <div class="col-md-10 form-validation">
-                                                                        <label for="email" class="form-label fs-5">Your Email</label>
-                                                                        <div class="input-group">
-                                                                            <input type="email" name="email" class="form-control p-2" id="email" placeholder=" email" value="<?php echo $row['email'] ?>" autocomplete="off">
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- password -->
-                                                                    <div class="col-md-10 form-validation">
-                                                                        <label for="password" class="form-label fs-5">Password</label>
-                                                                        <div class="input-group">
-                                                                            <input type="password" name="password" class="form-control p-2" placeholder="password" value="<?php echo $row['password'] ?>" id="password">
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- upload image -->
-                                                                    <div class="col-md-10 form-validation">
-                                                                        <label for="image" class="form-label fs-5">Upload Image</label>
-                                                                        <div class="input-group">
-                                                                            <input type="file" name="image" class="form-control p-2">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                        <button type="submit" name="updateinfo" class="btn btn-primary">Save changes</button>
-                                                                    </div>
-                                                                </form>
+                                                                <input type="text" name="firstname" class="form-control p-2" id="firstname" placeholder="firstname" value="<?php echo $row['firstname'] ?>" autocomplete="off">
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                        <!-- last name -->
+                                                        <div class="col-md-6 form-validation">
+                                                            <label for="lastname" class="form-label fs-5">Last name</label>
+                                                            <div class="input-group">
+                                                                <input type="text" name="lastname" class="form-control p-2" id="lastname" placeholder="lastname" value="<?php echo $row['lastname'] ?>" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                        <!-- Phone Number -->
+                                                        <div class="col-md-12 form-validation">
+                                                            <label for="phone" class="form-label fs-5">Phone</label>
+                                                            <div class="input-group">
+                                                                <input type="tel" name="phone" class="form-control" id="phone" placeholder="Phone Number" value="<?php echo $row['phone'] ?>" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                        <!-- email -->
+                                                        <div class="col-md-12 form-validation">
+                                                            <label for="email" class="form-label fs-5">Your Email</label>
+                                                            <div class="input-group">
+                                                                <input type="email" name="email" class="form-control p-2" id="email" placeholder=" email" value="<?php echo $row['email'] ?>" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                        <!-- password -->
+                                                        <div class="col-md-12 form-validation">
+                                                            <label for="password" class="form-label fs-5">Password</label>
+                                                            <div class="input-group">
+                                                                <input type="password" name="password" class="form-control p-2" placeholder="password" value="<?php echo $row['password'] ?>" id="password">
+                                                            </div>
+                                                        </div>
+                                                        <!-- upload image -->
+                                                        <div class="col-md-12 form-validation">
+                                                            <label for="image" class="form-label fs-5">Upload Image</label>
+                                                            <div class="input-group">
+                                                                <input type="file" name="image" class="form-control p-2">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" name="updateinfo" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
