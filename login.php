@@ -11,7 +11,7 @@ require_once 'config/function.php';
         </div>
 
         <!-- -------- Login form -------- -->
-        <div class="col-md-7 mt-md-5" id="secondLogin">
+        <div class="col-md-7 mt-md-5">
             <form class="row g-3 form" method="post" name="login_form" id="login_form">
                 <div class="col-md-8">
                     <label for="email" class="form-label fs-5">Email</label>
@@ -56,6 +56,7 @@ require_once 'config/function.php';
             document.getElementById("loginpassword_error").innerHTML = passwordError;
             submit = false;
         };
+
         return submit;
     }
 

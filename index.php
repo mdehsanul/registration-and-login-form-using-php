@@ -11,42 +11,45 @@ require_once 'config/function.php';
             <p class="fs-3 text-center">Online Content Provider Limited</p>
         </div>
         <!-- -------- Registration form -------- -->
-        <div class="col-md-7 mt-md-5" id="firstRegistration">
+        <div class="col-md-7 mt-md-5">
             <form class="row g-3" method="post" enctype="multipart/form-data" name="registration_form" id="registration_form">
-                <div class="col-md-8">
+                <div class="col-md-8 form-validation ">
                     <label for="name" class="form-label fs-5">Usrer Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                     <span class="error">
                         <p id="name_error"></p>
                     </span>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 form-validation ">
                     <label for="telephone" class="form-label fs-5"> Telephone</label>
                     <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="Telephone">
                     <span class="error">
                         <p id="telephone_error"></p>
                     </span>
+                    <small></small>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 form-validation ">
                     <label for="email" class="form-label fs-5">Email</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                     <span class="error">
                         <p id="email_error"></p>
                     </span>
+                    <small></small>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 form-validation ">
                     <label for="password" class="form-label fs-5"> Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                     <span class="error">
                         <p id="password_error"></p>
                     </span>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 form-validation ">
                     <label for="cpassword" class="form-label fs-5">Confirm Password</label>
                     <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password">
                     <span class="error">
                         <p id="cpassword_error"></p>
                     </span>
+                    <small></small>
                 </div>
                 <!-- upload image -->
                 <div class="col-md-5">

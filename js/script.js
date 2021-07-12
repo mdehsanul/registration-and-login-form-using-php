@@ -1,4 +1,4 @@
-// registration
+// registration -> Preventing form submission when input field is empty
 document.getElementById("registration_form").onsubmit = function () {
   var x = document.forms["registration_form"]["name"].value;
   var y = document.forms["registration_form"]["telephone"].value;
@@ -50,3 +50,63 @@ document.getElementById("telephone").onkeyup = removeWarning;
 document.getElementById("email").onkeyup = removeWarning;
 document.getElementById("password").onkeyup = removeWarning;
 document.getElementById("cpassword").onkeyup = removeWarning;
+
+// telephone, email -> validation and password, confirm password -> comparing
+const form = document.getElementById("registration_form");
+const username = document.getElementById("name");
+const telephone = document.getElementById("telephone");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const cpassword = document.getElementById("cpassword");
+
+// form validation
+form.addEventListener("keyup", () => {
+  const usernameValue = username.value;
+  const telephoneValue = telephone.value;
+  const emailValue = email.value;
+  const passwordValue = password.value;
+  const cpasswordValue = cpassword.value;
+
+  if (usernameValue != "") {
+    setSuccessMessage(username);
+  }
+  if (!isphone(telephoneValue)) {
+    setErrorMessage(telephone, "enter 11 digit valid phone number");
+  } else {
+    setSuccessMessage(telephone);
+  }
+
+  if (!isEmail(emailValue)) {
+    setErrorMessage(email, "not a valid email. ex: abc@gmail.com");
+  } else {
+    setSuccessMessage(email);
+  }
+
+  if (passwordValue !== cpasswordValue) {
+    setErrorMessage(cpassword, "wrong password");
+  } else {
+    setSuccessMessage(cpassword);
+  }
+});
+
+function setErrorMessage(input, message) {
+  const formValidation = input.parentElement;
+  const small = formValidation.querySelector("small");
+  formValidation.className = "form-validation error";
+  small.innerText = message;
+  submit = false;
+}
+
+function setSuccessMessage(input) {
+  const formValidation = input.parentElement;
+  formValidation.className = "form-validation success";
+  submit = true;
+}
+
+function isphone(phone) {
+  return /^(?:\+?88|0088)?01[15-9]\d{8}$/.test(phone);
+}
+
+function isEmail(email) {
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+}
