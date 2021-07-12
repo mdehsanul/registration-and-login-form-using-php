@@ -4,9 +4,8 @@ require_once 'database.php';
 
 // registration
 if (isset($_POST['register'])) {
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $phone = $_POST['phone'];
+    $name = $_POST['name'];
+    $telephone = $_POST['telephone'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     // image upload
@@ -25,7 +24,7 @@ if (isset($_POST['register'])) {
         echo 'alert("Email already exit");';
         echo '</script>';
     } else {
-        $sql = "INSERT INTO `users`(`firstname`, `lastname`, `phone`, `email`, `password`, `image`) VALUES ('$firstname','$lastname','$phone','$email','$password', '$filename')";
+        $sql = "INSERT INTO `users`(`username`, `telephone`, `email`, `password`, `image`) VALUES ('$name','$telephone','$email','$password', '$filename')";
         $data = mysqli_query($conn, $sql);
         if ($data) {
             echo '<script type = "text/javascript">';
@@ -37,8 +36,8 @@ if (isset($_POST['register'])) {
 
 // login
 if (isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = $_POST['loginemail'];
+    $password = $_POST['loginpassword'];
 
     $query = mysqli_query($conn, "SELECT * from users WHERE email='$email'");
     $result =  mysqli_fetch_array($query);

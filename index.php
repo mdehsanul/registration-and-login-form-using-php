@@ -11,119 +11,56 @@ require_once 'config/function.php';
             <p class="fs-3 text-center">Online Content Provider Limited</p>
         </div>
         <!-- -------- Registration form -------- -->
-        <div class="col-md-7  mt-md-5" id="firstRegistration">
-            <form class="row g-3" id="form" method="post" enctype="multipart/form-data">
-                <h2 class="fw-bold">Create an Account</h2>
-                <!-- first name -->
-                <div class="col-md-5 form-validation">
-                    <label for="firstname" class="form-label fs-5"> First
-                        name</label>
-                    <div class="input-group">
-                        <input type="text" name="firstname" class="form-control p-2" id="firstname" placeholder="Please enter your firstname" autocomplete="off">
-                        <small></small>
-                    </div>
+        <div class="col-md-7 mt-md-5" id="firstRegistration">
+            <form class="row g-3" method="post" enctype="multipart/form-data" name="registration_form" id="registration_form">
+                <div class="col-md-8">
+                    <label for="name" class="form-label fs-5">Usrer Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                    <span class="error">
+                        <p id="name_error"></p>
+                    </span>
                 </div>
-                <!-- last name -->
-                <div class="col-md-5 form-validation">
-                    <label for="lastname" class="form-label fs-5">Last name</label>
-                    <div class="input-group">
-                        <input type="text" name="lastname" class="form-control p-2" id="lastname" placeholder="Please enter your lastname" autocomplete="off">
-                        <small></small>
-                    </div>
+                <div class="col-md-8">
+                    <label for="telephone" class="form-label fs-5"> Telephone</label>
+                    <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="Telephone">
+                    <span class="error">
+                        <p id="telephone_error"></p>
+                    </span>
                 </div>
-                <!-- Phone Number -->
-                <div class="col-md-10 form-validation">
-                    <label for="phone" class="form-label fs-5">Phone</label>
-                    <div class="input-group">
-                        <input type="tel" name="phone" class="form-control" id="phone" placeholder="Phone Number" autocomplete="off">
-                        <small></small>
-                    </div>
+                <div class="col-md-8">
+                    <label for="email" class="form-label fs-5">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                    <span class="error">
+                        <p id="email_error"></p>
+                    </span>
                 </div>
-                <!-- email -->
-                <div class="col-md-10 form-validation">
-                    <label for="email" class="form-label fs-5">Your Email</label>
-                    <div class="input-group">
-                        <input type="email" name="email" class="form-control p-2" id="email" placeholder="Please provide an email" autocomplete="off">
-                        <small></small>
-                    </div>
+                <div class="col-md-8">
+                    <label for="password" class="form-label fs-5"> Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    <span class="error">
+                        <p id="password_error"></p>
+                    </span>
                 </div>
-                <!-- password -->
-                <div class="col-md-5 form-validation">
-                    <label for="password" class="form-label fs-5">Password</label>
-                    <div class="input-group">
-                        <input type="password" name="password" class="form-control p-2" placeholder="Please enter a password" id="password">
-                        <small></small>
-                    </div>
-                </div>
-                <!-- confirm password -->
-                <div class="col-md-5 form-validation">
+                <div class="col-md-8">
                     <label for="cpassword" class="form-label fs-5">Confirm Password</label>
-                    <div class="input-group">
-                        <input type="password" name="cpassword" class="form-control p-2" placeholder="Please confirm the password" id="cpassword">
-                        <small></small>
-                    </div>
+                    <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password">
+                    <span class="error">
+                        <p id="cpassword_error"></p>
+                    </span>
                 </div>
                 <!-- upload image -->
-                <div class="col-md-5 form-validation">
+                <div class="col-md-5">
                     <label for="image" class="form-label fs-5">Upload Image</label>
                     <div class="input-group">
-                        <input type="file" name="image" class="form-control p-2">
+                        <input type="file" name="image" class="form-control p-2 mb-3">
                     </div>
                 </div>
-                <!-- checkbox -->
-                <div class="col-12">
-                    <div class="form-check m-2">
-                        <input type="checkbox" class="form-check-input" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            I agree to the <span class="fw-bold"><u>Terms and Conditions</u></span>
-                        </label>
-                    </div>
+                <div class="col-md-8 d-grid">
+                    <button type="submit" class="btn text-white register_button" name="register" value="submit">Register
+                        Now</button>
                 </div>
-                <!-- submit button -->
-                <div class="col-md-10 d-grid">
-                    <button type="submit" name="register" class="btn text-white fs-5">Create your
-                        account</button>
-                </div>
-                <!-- Already Registered -->
-                <div class="form-group col-md-10 text-center">
-                    <p>Already Registered? <a href="#" id="alreadyRegistered">Login</a></p>
-                </div>
-            </form>
-        </div>
-        <!-- -------- Login form -------- -->
-        <div class="col-md-7 mt-md-5" id="secondLogin">
-            <form class="row g-3 form" method="post">
-                <h2 class="fw-bold">Login</h2>
-                <!-- email -->
-                <div class="col-md-7 form-validation">
-                    <label for="loginemail" class="form-label fs-5">Your Email</label>
-                    <div class="input-group">
-                        <input type="email" name="email" class="form-control p-2" placeholder="email" id="loginemail" autocomplete="off">
-                    </div>
-                </div>
-                <!-- password -->
-                <div class="col-md-7 form-validation">
-                    <label for="loginpassword" class="form-label fs-5">Password</label>
-                    <div class="input-group">
-                        <input type="password" name="password" class="form-control p-2" placeholder="password" id="loginpassword" autocomplete="off">
-                    </div>
-                </div>
-                <!-- checkbox -->
-                <div class="col-12">
-                    <div class="form-check m-2">
-                        <input type="checkbox" class="form-check-input" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Remember me
-                        </label>
-                    </div>
-                </div>
-                <!-- submit button -->
-                <div class="col-md-7 d-grid">
-                    <button type="submit" name="login" class="btn text-white fs-5">Login</button>
-                </div>
-                <!-- don't have an account -->
-                <div class="form-group col-md-7 text-center">
-                    <p>Don't have account? <a href="#" id="signup">Sign up here</a></p>
+                <div class="col-md-8 text-center">
+                    <p>Already Registered? <a href="./login.php" id="alreadyRegistered">Login</a></p>
                 </div>
             </form>
         </div>

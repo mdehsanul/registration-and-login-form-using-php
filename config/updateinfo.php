@@ -4,9 +4,8 @@ require_once 'database.php';
 // update user info
 if (isset($_POST['updateinfo'])) {
     $id = $_POST['id'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $phone = $_POST['phone'];
+    $name = $_POST['name'];
+    $telephone = $_POST['telephone'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     // image upload
@@ -16,7 +15,7 @@ if (isset($_POST['updateinfo'])) {
     $filetype = $_FILES['image']['type'];
     move_uploaded_file($filetemp, "../update-images/" . $filename);
 
-    $sql = "UPDATE `users` SET `firstname`='$firstname',`lastname`='$lastname',`phone`='$phone',`email`='$email',`password`='$password',`image`='$filename' WHERE id='$id'";
+    $sql = "UPDATE `users` SET `username`='$name',`telephone`='$telephone',`email`='$email',`password`='$password',`image`='$filename' WHERE id='$id'";
     $data = mysqli_query($conn, $sql);
     if ($data) {
         echo '<script type = "text/javascript">';
