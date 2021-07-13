@@ -20,9 +20,9 @@ span {
 }
 
 .form-validation small {
-  visibility: hidden;
-  position: absolute;
   color: #e74c3c;
+  position: absolute;
+  visibility: hidden;
 }
 
 .form-validation.error small {

@@ -67,9 +67,12 @@ form.addEventListener("keyup", () => {
   const passwordValue = password.value;
   const cpasswordValue = cpassword.value;
 
-  if (usernameValue != "") {
+  if (usernameValue === "") {
+    setErrorMessage(username, "first name cannot be blank");
+  } else {
     setSuccessMessage(username);
   }
+
   if (!isphone(telephoneValue)) {
     setErrorMessage(telephone, "enter 11 digit valid phone number");
   } else {
