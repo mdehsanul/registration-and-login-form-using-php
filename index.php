@@ -17,9 +17,16 @@ require_once 'config/function.php';
                     <label for="name" class="form-label fs-5">Usrer Name</label>
                     <div>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-                        <span class="error">
-                            <p id="name_error"></p>
-                        </span>
+                        <div class="d-flex justify-content-start">
+                            <div class="col-md-6">
+                                <span class="error">
+                                    <p id="name_error"></p>
+                                </span>
+                            </div>
+                            <div class="col-md-6">
+                                <small></small>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-8 form-validation ">
@@ -44,54 +51,62 @@ require_once 'config/function.php';
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                         <div class="d-flex justify-content-start">
                             <div class="col-md-6">
-
-                                <p id="email_error"></p>
-
+                                <span class="error">
+                                    <p id="email_error"></p>
+                                </span>
                             </div>
                             <div class="col-md-6">
                                 <small></small>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 form-validation ">
-                        <label for="password" class="form-label fs-5"> Password</label>
-                        <div>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                            <span class="error">
-                                <p id="password_error"></p>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-md-12 form-validation ">
-                        <label for="cpassword" class="form-label fs-5">Confirm Password</label>
-                        <div>
-                            <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password">
-                            <div class="d-flex justify-content-start">
-                                <div class="col-md-6">
-                                    <span class="error">
-                                        <p id="cpassword_error"></p>
-                                    </span>
-                                </div>
-                                <div class="col-md-6">
-                                    <small></small>
-                                </div>
+                </div>
+                <div class="col-md-8 form-validation ">
+                    <label for="password" class="form-label fs-5"> Password</label>
+                    <div>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        <div class="d-flex justify-content-start">
+                            <div class="col-md-6">
+                                <span class="error">
+                                    <p id="password_error"></p>
+                                </span>
+                            </div>
+                            <div class="col-md-6">
+                                <small></small>
                             </div>
                         </div>
                     </div>
-                    <!-- upload image -->
-                    <div class="col-md-5">
-                        <label for="image" class="form-label fs-5">Upload Image</label>
-                        <div class="input-group">
-                            <input type="file" name="image" class="form-control p-2 mb-3">
+                </div>
+                <div class="col-md-8 form-validation ">
+                    <label for="cpassword" class="form-label fs-5">Confirm Password</label>
+                    <div>
+                        <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password">
+                        <div class="d-flex justify-content-start">
+                            <div class="col-md-6">
+                                <span class="error">
+                                    <p id="cpassword_error"></p>
+                                </span>
+                            </div>
+                            <div class="col-md-6">
+                                <small></small>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-12 d-grid">
-                        <button type="submit" class="btn text-white register_button" name="register" value="submit">Register
-                            Now</button>
+                </div>
+                <!-- upload image -->
+                <div class="col-md-5">
+                    <label for="image" class="form-label fs-5">Upload Image</label>
+                    <div class="input-group">
+                        <input type="file" name="image" class="form-control p-2 mb-3">
                     </div>
-                    <div class="col-md-12 text-center">
-                        <p>Already Registered? <a href="./login.php" id="alreadyRegistered">Login</a></p>
-                    </div>
+                </div>
+                <div class="col-md-8 d-grid">
+                    <button type="submit" class="btn text-white register_button" name="register" value="submit">Register
+                        Now</button>
+                </div>
+                <div class="col-md-8 text-center">
+                    <p>Already Registered? <a href="./login.php" id="alreadyRegistered">Login</a></p>
+                </div>
             </form>
         </div>
     </div>

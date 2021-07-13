@@ -67,12 +67,11 @@ form.addEventListener("keyup", () => {
   const passwordValue = password.value;
   const cpasswordValue = cpassword.value;
 
-  if (usernameValue === "") {
-    setErrorMessage(username, "first name cannot be blank");
-  } else {
+  if (usernameValue != "") {
     setSuccessMessage(username);
+  } else {
+    setErrorMessage(username, "first name cannot be blank");
   }
-
   if (!isphone(telephoneValue)) {
     setErrorMessage(telephone, "enter 11 digit valid phone number");
   } else {
@@ -83,6 +82,12 @@ form.addEventListener("keyup", () => {
     setErrorMessage(email, "not a valid email. ex: abc@gmail.com");
   } else {
     setSuccessMessage(email);
+  }
+
+  if (passwordValue != "") {
+    setSuccessMessage(password);
+  } else {
+    setErrorMessage(password, "password cannot be blank");
   }
 
   if (passwordValue !== cpasswordValue) {
